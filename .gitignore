@@ -1,0 +1,15 @@
+.env
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Keep raw source PDFs local.
+data/raw_pdfs/
+
+# Temporary processed binary artifacts.
+data/processed/*.pkl
+data/processed/*.pickle
+data/processed/*.parquet
+data/processed/*.feather
+data/processed/*.bin
+data/processed/*.tmp
