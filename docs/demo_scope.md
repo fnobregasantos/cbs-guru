@@ -1,11 +1,12 @@
-# Demo Scope
+# Prototype Scope
 
-This internal demo will show a small, controlled CBS Guru workflow:
+This prototype demonstrates a small, controlled CBS Guru workflow:
 
-- collect or list a limited set of CBS source links
+- collect or list CBS documentation sources
 - store raw PDFs locally outside Git
-- extract and process text into local derived files
-- answer scoped questions against the processed source material
+- upload public CBS documentation PDFs to a retrieval index
+- answer scoped questions against retrieved source material
+- optionally build a rough variables catalog for inspection
 - review answer quality with a small evaluation set
 
 Out of scope for the prototype:
@@ -15,3 +16,4 @@ Out of scope for the prototype:
 - automated publishing workflows
 - long-term document storage guarantees
 - access control beyond local demo configuration
+- final scientific validation without manual source checks

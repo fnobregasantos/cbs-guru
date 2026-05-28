@@ -1,7 +1,8 @@
 openai
 streamlit
 pandas
+python-dotenv
+tqdm
+pypdf
 requests
 beautifulsoup4
-pypdf
-python-dotenv

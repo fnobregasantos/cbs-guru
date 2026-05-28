@@ -2,17 +2,17 @@
 
 ## Opening
 
-Introduce CBS Guru as an internal prototype for exploring question answering over selected CBS source material.
+Introduce CBS Guru as a research prototype for exploring question answering over public CBS documentation. Explain that it is part of the RPA PSI work on Emergent Phenomena in Society at the University of Amsterdam.
 
 ## Walkthrough
 
-1. Show the repository structure and explain where raw links, raw PDFs, processed data, app code, and evaluations live.
-2. Show that raw PDFs remain local and are excluded from Git.
-3. Run or describe the ingestion and processing step for the selected demo documents.
-4. Open the Streamlit demo app once available.
-5. Ask a small set of scoped questions that can be answered from the selected source material.
-6. Review the answer, source grounding, and any known limitations.
+1. Open the Streamlit app and point out the prototype warning.
+2. Explain that the app searches uploaded public CBS documentation PDFs through OpenAI `file_search`.
+3. Ask a scoped research question about segregation, migration background, income, education, or employment.
+4. Review recommended candidate variables, source PDFs, and evidence snippets.
+5. Emphasize that candidates must be checked in the original CBS documentation before research use.
+6. Mention planned improvements: reviewed catalog, stronger citations, evaluation set, and deployment hardening.
 
 ## Close
 
-Summarize what the prototype demonstrates, what remains experimental, and what would be needed before production use.
+Summarize what the prototype demonstrates, what remains experimental, and what will be improved during the next project phase.

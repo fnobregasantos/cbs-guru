@@ -1,4 +1,5 @@
 .env
+.DS_Store
 __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
@@ -7,6 +8,9 @@ __pycache__/
 data/raw_pdfs/
 
 # Temporary processed binary artifacts.
+data/processed/*.csv
+data/processed/*.json
+data/processed/*.jsonl
 data/processed/*.pkl
 data/processed/*.pickle
 data/processed/*.parquet
