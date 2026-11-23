@@ -1,5 +1,7 @@
 # Architecture
 
+> Historical documentation for the earlier Streamlit prototype. The current public pilot is at [cbsguru.org](https://www.cbsguru.org/). Its website source is not included in this repository. See the [project overview](../README.md) for current features.
+
 CBS Guru is organized as a lightweight prototype pipeline for retrieval over public CBS documentation PDFs and exploratory variable catalog building.
 
 ## Components

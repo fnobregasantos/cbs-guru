@@ -1,5 +1,7 @@
 # Prototype Scope
 
+> Historical scope of the earlier Streamlit prototype. For the current public pilot and its limitations, see the [project overview](../README.md) and [live website](https://www.cbsguru.org/).
+
 This prototype demonstrates a small, controlled CBS Guru workflow:
 
 - collect or list CBS documentation sources

@@ -1,5 +1,7 @@
 # Prototype strategy
 
+> Historical strategy for the earlier Streamlit prototype. It does not describe the current live website implementation. See the [project overview](../README.md) for the current pilot; website source is held for a separate release.
+
 CBS Guru currently uses OpenAI `file_search` over uploaded public CBS documentation PDFs. This gives the prototype a practical way to answer questions from source documents while the reviewed variable catalog and evaluation workflow are still being developed.
 
 The goal is to support research discussion and scoping, not to replace official CBS documentation or expert review.

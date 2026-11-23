@@ -4,6 +4,9 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 
+# Local website, deployment files and presentation work are held for a separate release.
+/presentation-preview/
+
 # Keep raw source PDFs local.
 data/raw_pdfs/
 
