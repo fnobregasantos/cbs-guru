@@ -5,6 +5,7 @@ from __future__ import annotations
 import os
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 import streamlit as st
 from dotenv import load_dotenv
@@ -18,6 +19,7 @@ from guru_engine import ask_cbs_guru  # noqa: E402
 
 
 CATALOG_PATH = ROOT / "data/processed/variables_catalog.csv"
+PUBLIC_SITE = "https://www.cbsguru.org/"
 DIEP_LOGO_URL = "https://static.wixstatic.com/media/5f1c7a_33082679ca504f8b977c4e98e8deb8e7~mv2.png/v1/fill/w_92,h_85,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/5f1c7a_33082679ca504f8b977c4e98e8deb8e7~mv2.png"
 UVA_LOGO_URL = "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/University_of_Amsterdam_logo.svg/960px-University_of_Amsterdam_logo.svg.png"
 RPA_PSI_URL = "https://www.d-iep.org/rpapsi"
@@ -34,6 +36,15 @@ SUGGESTED_QUESTIONS = [
 def main() -> None:
     load_dotenv(ROOT / ".env")
     st.set_page_config(page_title="CBS Guru", layout="wide")
+    if urlsplit(st.context.url).hostname == "cbs-guru.streamlit.app":
+        st.title("CBS Guru has moved")
+        st.link_button("Open CBS Guru at www.cbsguru.org", PUBLIC_SITE, type="primary")
+        st.html(
+            f'<script>if (window.self === window.top) window.location.replace("{PUBLIC_SITE}");</script>',
+            unsafe_allow_javascript=True,
+        )
+        return
+
     if not password_gate():
         return
 
