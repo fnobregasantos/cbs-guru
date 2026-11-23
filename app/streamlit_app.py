@@ -35,10 +35,43 @@ SUGGESTED_QUESTIONS = [
 
 def main() -> None:
     load_dotenv(ROOT / ".env")
-    st.set_page_config(page_title="CBS Guru", layout="wide")
-    if urlsplit(st.context.url).hostname == "cbs-guru.streamlit.app":
+    conference_link = urlsplit(st.context.url).hostname == "cbs-guru.streamlit.app"
+    st.set_page_config(page_title="CBS Guru", layout="centered" if conference_link else "wide")
+    if conference_link:
         st.title("CBS Guru has moved")
-        st.link_button("Open CBS Guru at www.cbsguru.org", PUBLIC_SITE, type="primary")
+        st.html(
+            f"""
+            <style>
+            a.cbs-site-banner {{
+                display: grid;
+                grid-template-columns: minmax(0, 1fr) auto;
+                align-items: center;
+                gap: 0.4rem 1rem;
+                box-sizing: border-box;
+                width: 100%;
+                padding: 2rem;
+                border-radius: 8px;
+                background: #0055a6;
+                color: white;
+                text-decoration: none;
+                line-height: 1.3;
+            }}
+            a.cbs-site-banner:hover, a.cbs-site-banner:focus-visible {{ background: #003e7c; color: white; }}
+            a.cbs-site-banner:focus-visible {{ outline: 3px solid currentColor; outline-offset: -6px; }}
+            .cbs-site-banner strong {{ grid-column: 1; font-size: 2rem; overflow-wrap: anywhere; text-decoration: underline; }}
+            .cbs-site-banner .arrow {{ grid-column: 2; grid-row: 1 / 3; font-size: 2rem; }}
+            @media (max-width: 480px) {{
+                a.cbs-site-banner {{ padding: 1.25rem; gap: 0.4rem 0.5rem; }}
+                .cbs-site-banner strong, .cbs-site-banner .arrow {{ font-size: 1.5rem; }}
+            }}
+            </style>
+            <a class="cbs-site-banner" href="{PUBLIC_SITE}" target="_blank" rel="noopener noreferrer">
+                <span>Open CBS Guru at its permanent address</span>
+                <strong>www.cbsguru.org</strong>
+                <span class="arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            """
+        )
         st.html(
             f'<script>if (window.self === window.top) window.location.replace("{PUBLIC_SITE}");</script>',
             unsafe_allow_javascript=True,
